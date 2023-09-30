@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33403.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "Prod Data Integration", "Prod Data Integration.dtproj", "{6FC1877B-1DF9-4EA6-8353-2454F77881DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6FC1877B-1DF9-4EA6-8353-2454F77881DE}.Development|Default.ActiveCfg = Development
+		{6FC1877B-1DF9-4EA6-8353-2454F77881DE}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2896FCBC-8F77-4F92-B835-9E32B8909564}
+	EndGlobalSection
+EndGlobal

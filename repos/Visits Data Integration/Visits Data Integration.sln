@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "Visits Data Integration", "Visits Data Integration.dtproj", "{252ADF7F-7A36-4377-882C-CF2E14C53590}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{252ADF7F-7A36-4377-882C-CF2E14C53590}.Development|Default.ActiveCfg = Development
+		{252ADF7F-7A36-4377-882C-CF2E14C53590}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {668317A8-2572-4A1C-806B-FE21AA944845}
+	EndGlobalSection
+EndGlobal

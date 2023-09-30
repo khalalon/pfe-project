@@ -1,0 +1,479 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<style>
+    .border {
+        border: 2px solid black;
+    }
+
+    h3, h4 {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin: 0.5em 0;
+        text-align: center;
+    }
+
+    #chart1, #chart2, #chart3, #chart4 {
+        height: 400px;
+        margin: 2em 0;
+    }
+
+    /* Styling for the period range picker */
+    .date-picker {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2em 0;
+    }
+
+        .date-picker label {
+            margin-right: 1em;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .date-picker input[type="date"] {
+            font-size: 1.2em;
+            padding: 0.5em;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .date-picker button {
+            font-size: 1.2em;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+            .date-picker button:hover {
+                background-color: #3e8e41;
+            }
+
+    /* Styling for the button */
+    #updateButton {
+        display: block;
+        margin: 2em auto;
+        font-size: 1.2em;
+        padding: 0.5em 1em;
+        border-radius: 4px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-left: 14cm;
+        display: block !important;
+    }
+
+        #updateButton:hover {
+            background-color: #3e8e41;
+        }
+
+    .filter-button {
+        display: inline-block;
+        padding: 8px 16px;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+        color: #fff;
+        background-color: #4CAF50;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        .filter-button:hover {
+            background-color: #3e8e41;
+        }
+
+        .filter-button:active {
+            background-color: #2962ff;
+            box-shadow: 0 2px #666;
+            transform: translateY(2px);
+        }
+    .category-filter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1em 0;
+    }
+
+        .category-filter label {
+            margin-right: 1em;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .category-filter select {
+            font-size: 1.2em;
+            padding: 0.5em;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+    .my-button {
+        display: inline-block;
+        padding: 8px 16px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #fff;
+        background-color: #4CAF50;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .button-container {
+        float: right;
+        margin-right: 10px; /* Optional - add some margin on the right for spacing */
+    }
+
+</style>
+<button class="my-button" onclick="location.href='../Home/Index'">VIEW EMAILS DASHBOARD</button>
+    <div class="button-container">
+        <button class="my-button" onclick="toggleFilters()">FILTER</button>
+    </div>
+    <div id="filterDiv" style="display: none;">
+        <div class="date-picker">
+            <label for="startDate">Start Date:</label>
+            <input id="startDate" type="date" value="2021-01-01">
+            <label for="endDate">End Date:</label>
+            <input id="endDate" type="date" value="2023-05-30">
+        </div>
+        <div class="category-filter">
+            <label for="ageRange">Age Range:</label>
+            <select id="ageRange">
+                <option value="">All</option>
+                <option value="16-24">16-24</option>
+                <option value="25-34">25-34</option>
+                <option value="35-44">35-44</option>
+                <option value="45-54">45-54</option>
+                <option value="55-64">55-64</option>
+                <option value="65-74">65-74</option>
+                <option value="75+">75+</option>
+                <option value="Unknown">Unknown</option>
+            </select>
+        </div>
+        <button id="updateButton" style="display: none;">Update Charts</button>
+
+    </div>
+
+        <div class="border" style="margin-top:1cm;">
+            <div>
+                <h3>Visits By Day Of Week</h3>
+            </div>
+            <div id="chart2" style="height: 400px;"></div>
+        </div>
+
+        <div class="border" style="margin-top:1cm;">
+            <div>
+                <h3>Top Most Visited Sites</h3>
+            </div>
+            <div id="chart3" style="height: 400px;"></div>
+        </div>
+        <div class="border" style="margin-top:1cm;">
+            <div>
+                <h3>Visits By Source</h3>
+            </div>
+            <div id="chart" style="height: 400px;"></div>
+        </div>
+
+        <div class="border" style="margin-top:1cm;">
+            <div>
+                <h3>
+                    Number of Visits by Day and Age Range
+                </h3>
+            </div>
+            <div id="heatmap" style="height: 400px;"> </div>
+        </div>
+
+        <div id="grid1" style="height: 400px; margin-top: 1cm;" class="border"></div>
+
+        @section scripts {
+            <link href="https://kendo.cdn.telerik.com/themes/6.2.0/default/default-main.css" rel="stylesheet" />
+            <script src="https://kendo.cdn.telerik.com/2023.1.314/js/jquery.min.js"></script>
+            <script src="https://kendo.cdn.telerik.com/2023.1.314/js/kendo.all.min.js"></script>
+
+            <script>
+                function toggleFilters() {
+                    var filterDiv = document.getElementById('filterDiv');
+                    var updateButton = document.getElementById('updateButton');
+
+                    if (filterDiv.style.display === 'none') {
+                        filterDiv.style.display = 'block';
+                        updateButton.style.display = 'block';
+                    } else {
+                        filterDiv.style.display = 'none';
+                        updateButton.style.display = 'none';
+                    }
+                }
+
+                function createChart(data) {
+                    if ($("#grid1").data("kendoGrid")) {
+                        $("#grid1").data("kendoGrid").destroy();
+                        $("#grid1").empty();
+                    }
+                    $("#grid1").kendoGrid({
+                        dataSource: {
+                            data: data,
+                            schema: {
+                                model: {
+                                    fields: {
+                                        VisitsFactID: { type: "number" },
+                                        SiteID: { type: "number" },
+                                        SiteName: { type: "string" },
+                                        DirectSpent: { type: "number" },
+                                        IndirectSpent: { type: "number" },
+                                        CtcID: { type: "number" },
+                                        VisitDateTime: { type: "date" },
+                                        Source: { type: "string" },
+                                        ModifiedDate: { type: "date" }
+                                    }
+                                }
+                            },
+                            pageSize: 100,
+                            serverPaging: true,
+                            serverSorting: true
+                        },
+                        height: 543,
+                        scrollable: {
+                            virtual: true
+                        },
+                        sortable: true,
+                        columns: [
+                            { field: "VisitsFactID", title: "Visits Fact ID", width: 150 },
+                            { field: "CtcID", title: "Ctc ID", width: 100 },
+                            { field: "SiteName", title: "Site Name", width: 150 },
+                            { field: "Source", title: "Source", width: 100 },
+                            { field: "DirectSpent", title: "Direct Spent", width: 150, format: "{0:c2}" },
+                            { field: "IndirectSpent", title: "Indirect Spent", width: 150 },
+                            { field: "VisitDateTime", title: "Visit Date", width: 140, format: "{0:yyyy-MM-dd}" },
+                            { field: "ModifiedDate", title: "Modified Date", width: 140, format: "{0:yyyy-MM-dd}" }
+                        ]
+                    });
+                }
+                function createChart1(data) {
+                    $("#chart").kendoChart({
+                        legend: {
+                            position: "bottom"
+                        },
+                        chartArea: {
+                            background: ""
+                        },
+                        seriesDefaults: {
+                            type: "column",
+                            style: "smooth",
+                            color: "#01A9DB"
+
+                        },
+                        series: [{
+                            name: "Visits Count",
+                            data: $.map(data, function (item) { return item.Count; })
+                        }],
+                        valueAxis: {
+                            line: {
+                                visible: false
+                            },
+                            axisCrossingValue: 0
+                        },
+                        categoryAxis: {
+                            categories: $.map(data, function (item) { return item.Source; }),
+                            majorGridLines: {
+                                visible: false
+                            }
+                        },
+                        tooltip: {
+                            visible: true,
+                            template: "#= category #: #= value #"
+                        }
+                    });
+                }
+                function createChart2(data) {
+                    $("#chart2").kendoChart({
+                        legend: {
+                            position: "bottom"
+                        },
+                        chartArea: {
+                            background: ""
+                        },
+                        seriesDefaults: {
+                            type: "column"
+                        },
+                        series: [{
+                            name: "Visits Count",
+                            data: $.map(data, function (item) { return item.Count; })
+                        }],
+                        valueAxis: {
+                            line: {
+                                visible: false
+                            },
+                            axisCrossingValue: 0
+                        },
+                        categoryAxis: {
+                            categories: $.map(data, function (item) { return item.Day; }),
+                            majorGridLines: {
+                                visible: false
+                            }
+                        },
+                        tooltip: {
+                            visible: true,
+                            template: "#= category #: #= value #"
+                        }
+                    });
+                }
+                function createChart3(data) {
+                    var colors = ["#EB984E", "#D98880", "#AF7AC5", "#7FB3D5", "#76D7C4", "#1ABC9C", "#239B56", "#D4AC0D"];
+                    $("#chart3").kendoChart({
+                        legend: {
+                            visible: false
+                        },
+                        chartArea: {
+                            background: ""
+                        },
+                        seriesDefaults: {
+                            labels: {
+                                visible: true,
+                                position: "outsideEnd", // position the labels outside the chart area
+                                background: "transparent",
+                                template: "#= category #: \n #= kendo.format('{0:P}', percentage) #"
+                            }
+                        },
+                        series: [{
+                            type: "donut",
+                            startAngle: 150,
+                            data: data.map(function (item, index) {
+                                return {
+                                    category: item.Name,
+                                    value: item.Count,
+                                    color: colors[index % colors.length]
+                                };
+                            })
+                        }],
+                        tooltip: {
+                            visible: true,
+                            format: "{0}"
+                        }
+                    });
+
+                }
+                function createChart8(data) {
+                    $("#heatmap").kendoChart({
+                        dataSource: {
+                            data: data
+                        },
+                        series: [{
+                            name: 'Number of visits per day',
+                            type: 'heatmap',
+                            xField: 'DayOfWeek', 
+                            yField: 'AgeRange',
+                            field: 'Count', 
+                            tooltip: {
+                                visible: true,
+                                template: "<b>#=dataItem.AgeRange# had <b>#=dataItem.Count#</b> visits on <b>#=dataItem.DayOfWeek#</b>"
+                            }
+                        }],
+                        legend: {
+                            position: "bottom"
+                        },
+                        xAxis: {
+                            labels: {
+                                rotation: 'auto'
+                            },
+                            categories: getUniqueValues(data.map(item => item.DayOfWeek)) // Assuming 'DayOfWeek' is the property name for the day of the week in the retrieved data
+                        },
+                        yAxis: {
+                            categories: getUniqueValues(data.map(item => item.AgeRange)) // Assuming 'AgeRange' is the property name for the age range in the retrieved data
+                        },
+                        pannable: true,
+                        zoomable: false,
+                    });
+                }
+
+                function getUniqueValues(array) {
+                    return [...new Set(array)];
+                }
+
+
+                $(document).ready(function () {
+                    $("#updateButton").click(function () {
+                        var startDate = $("#startDate").val();
+                        var endDate = $("#endDate").val();
+                        var ageRange = $("#ageRange").val();
+
+                        $.ajax({
+                            url: "/Visits/GetAllVisits",
+                            data: {
+                                startDate: startDate,
+                                endDate: endDate,
+                                ageRange: ageRange
+                            },
+                            success: function (data) {
+                                createChart(data);
+                            }
+                        });
+                        $.ajax({
+                            url: "/Visits/GetVisitsBySource",
+                            data: {
+                                startDate: startDate,
+                                endDate: endDate,
+                                ageRange: ageRange
+                            },
+                            success: function (data) {
+                                createChart1(data);
+                            }
+                        });
+                        $.ajax({
+                            url: "/Visits/GetVisitsByDay",
+                            data: {
+                                startDate: startDate,
+                                endDate: endDate,
+                                ageRange: ageRange
+                            },
+                            success: function (data) {
+                                createChart2(data);
+                            }
+                        });
+                        $.ajax({
+                            url: "/Visits/GetMostVisited",
+                            data: {
+                                startDate: startDate,
+                                endDate: endDate,
+                                ageRange: ageRange
+                            },
+                            success: function (data) {
+                                createChart3(data);
+                            }
+                        });
+                        $.ajax({
+                            url: "/Visits/GetVisitSpent",
+                            data: {
+                                startDate: startDate,
+                                endDate: endDate,
+                                ageRange: ageRange
+                            },
+                            success: function (data) {
+                                createChart4(data);
+                            }
+                        });
+                        $.ajax({
+                            url: "/Visits/GetVisitData",
+                            data: {
+                                startDate: startDate,
+                                endDate: endDate,
+                                ageRangeFilter: ageRange
+                            },
+                            success: function (data) {
+                                createChart8(data);
+                            }
+                        });
+
+
+                    });
+                });
+            </script>
+        }

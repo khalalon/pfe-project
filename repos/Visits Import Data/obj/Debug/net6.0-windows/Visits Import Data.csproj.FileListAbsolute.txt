@@ -1,0 +1,40 @@
+C:\Users\ASUS\source\repos\Visits Import Data\bin\Debug\net6.0-windows\Visits Import Data.exe
+C:\Users\ASUS\source\repos\Visits Import Data\bin\Debug\net6.0-windows\Visits Import Data.deps.json
+C:\Users\ASUS\source\repos\Visits Import Data\bin\Debug\net6.0-windows\Visits Import Data.runtimeconfig.json
+C:\Users\ASUS\source\repos\Visits Import Data\bin\Debug\net6.0-windows\Visits Import Data.dll
+C:\Users\ASUS\source\repos\Visits Import Data\bin\Debug\net6.0-windows\Visits Import Data.pdb
+C:\Users\ASUS\source\repos\Visits Import Data\bin\Debug\net6.0-windows\Google.Protobuf.dll
+C:\Users\ASUS\source\repos\Visits Import Data\bin\Debug\net6.0-windows\K4os.Compression.LZ4.dll
+C:\Users\ASUS\source\repos\Visits Import Data\bin\Debug\net6.0-windows\K4os.Compression.LZ4.Streams.dll
+C:\Users\ASUS\source\repos\Visits Import Data\bin\Debug\net6.0-windows\K4os.Hash.xxHash.dll
+C:\Users\ASUS\source\repos\Visits Import Data\bin\Debug\net6.0-windows\MySql.Data.dll
+C:\Users\ASUS\source\repos\Visits Import Data\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\ASUS\source\repos\Visits Import Data\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
+C:\Users\ASUS\source\repos\Visits Import Data\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\ASUS\source\repos\Visits Import Data\bin\Debug\net6.0-windows\System.IO.Pipelines.dll
+C:\Users\ASUS\source\repos\Visits Import Data\bin\Debug\net6.0-windows\System.Text.Encodings.Web.dll
+C:\Users\ASUS\source\repos\Visits Import Data\bin\Debug\net6.0-windows\System.Text.Json.dll
+C:\Users\ASUS\source\repos\Visits Import Data\bin\Debug\net6.0-windows\runtimes\win-x64\native\comerr64.dll
+C:\Users\ASUS\source\repos\Visits Import Data\bin\Debug\net6.0-windows\runtimes\win-x64\native\gssapi64.dll
+C:\Users\ASUS\source\repos\Visits Import Data\bin\Debug\net6.0-windows\runtimes\win-x64\native\k5sprt64.dll
+C:\Users\ASUS\source\repos\Visits Import Data\bin\Debug\net6.0-windows\runtimes\win-x64\native\krb5_64.dll
+C:\Users\ASUS\source\repos\Visits Import Data\bin\Debug\net6.0-windows\runtimes\win-x64\native\krbcc64.dll
+C:\Users\ASUS\source\repos\Visits Import Data\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\ASUS\source\repos\Visits Import Data\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\ASUS\source\repos\Visits Import Data\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\ASUS\source\repos\Visits Import Data\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\ASUS\source\repos\Visits Import Data\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\ASUS\source\repos\Visits Import Data\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\ASUS\source\repos\Visits Import Data\obj\Debug\net6.0-windows\Visits Import Data.csproj.AssemblyReference.cache
+C:\Users\ASUS\source\repos\Visits Import Data\obj\Debug\net6.0-windows\Visits_Import_Data.Form1.resources
+C:\Users\ASUS\source\repos\Visits Import Data\obj\Debug\net6.0-windows\Visits Import Data.csproj.GenerateResource.cache
+C:\Users\ASUS\source\repos\Visits Import Data\obj\Debug\net6.0-windows\Visits Import Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\source\repos\Visits Import Data\obj\Debug\net6.0-windows\Visits Import Data.AssemblyInfoInputs.cache
+C:\Users\ASUS\source\repos\Visits Import Data\obj\Debug\net6.0-windows\Visits Import Data.AssemblyInfo.cs
+C:\Users\ASUS\source\repos\Visits Import Data\obj\Debug\net6.0-windows\Visits Import Data.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\source\repos\Visits Import Data\obj\Debug\net6.0-windows\Visits Import Data.csproj.CopyComplete
+C:\Users\ASUS\source\repos\Visits Import Data\obj\Debug\net6.0-windows\Visits Import Data.dll
+C:\Users\ASUS\source\repos\Visits Import Data\obj\Debug\net6.0-windows\refint\Visits Import Data.dll
+C:\Users\ASUS\source\repos\Visits Import Data\obj\Debug\net6.0-windows\Visits Import Data.pdb
+C:\Users\ASUS\source\repos\Visits Import Data\obj\Debug\net6.0-windows\Visits Import Data.genruntimeconfig.cache
+C:\Users\ASUS\source\repos\Visits Import Data\obj\Debug\net6.0-windows\ref\Visits Import Data.dll

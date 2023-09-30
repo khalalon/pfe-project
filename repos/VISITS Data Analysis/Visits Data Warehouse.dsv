@@ -1,0 +1,174 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="d3c96352-7b9c-4cdf-aaa0-746b8c3e590d" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Visits Data Warehouse</ID>
+  <Name>Visits Data Warehouse</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>Visits Data Warehouse</DataSourceID>
+  <Schema>
+    <xs:schema id="Visits_x0020_Data_x0020_Warehouse" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="Visits_x0020_Data_x0020_Warehouse" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="6f039563-d22b-4f3d-a14b-e4144f273ae2">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_DIM_Age" msprop:DbTableName="DIM_Age" msprop:FriendlyName="DIM_Age" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="2b3dcdf4-892f-4ba6-883f-eb16e57c86bd">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="AgeRange" msprop:FriendlyName="AgeRange" msprop:DbColumnName="AgeRange" msprop:design-time-name="21482a41-0b04-4ff7-89da-0ebd60660a9c" type="xs:int" />
+                  <xs:element name="Description" msprop:FriendlyName="Description" msprop:DbColumnName="Description" msprop:design-time-name="9cf34622-56e7-44bb-9179-7132ff3bbf97" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="250" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DIM_Gender" msprop:DbTableName="DIM_Gender" msprop:FriendlyName="DIM_Gender" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="87086d2a-3a0a-499c-a5d8-eed722b2aa08">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Gender" msprop:FriendlyName="Gender" msprop:DbColumnName="Gender" msprop:design-time-name="cf77bc2c-a90e-4bf4-af92-3c13f81d2252">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="250" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Description" msprop:FriendlyName="Description" msprop:DbColumnName="Description" msprop:design-time-name="e27446d0-aa2d-41d6-9d09-0006d78ea859" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="250" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DIM_Site" msprop:DbTableName="DIM_Site" msprop:FriendlyName="DIM_Site" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="98461332-520f-4fbb-8e09-9f8b59ef8c85">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="SiteID" msprop:FriendlyName="SiteID" msprop:DbColumnName="SiteID" msprop:design-time-name="fe5435a5-4d89-441b-a7a8-6f1eee8c8df7" type="xs:int" />
+                  <xs:element name="SiteName" msprop:FriendlyName="SiteName" msprop:DbColumnName="SiteName" msprop:design-time-name="290a448c-0552-4a5c-b7cb-e8b0d4d1430d" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="250" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DIM_Source" msprop:DbTableName="DIM_Source" msprop:FriendlyName="DIM_Source" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="bac4e51c-07e7-4625-a844-42295a9a723b">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Source_x0020_ID" msprop:FriendlyName="Source ID" msprop:DbColumnName="Source ID" msprop:design-time-name="10fe4252-42cf-47c3-8099-7becfa31db59" type="xs:int" />
+                  <xs:element name="Source" msprop:FriendlyName="Source" msprop:DbColumnName="Source" msprop:design-time-name="7b604f43-c877-40a2-bdc1-3430b4090b0e" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="250" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_FACT" msprop:DbTableName="FACT" msprop:FriendlyName="FACT" msprop:TableType="Table" msprop:DbSchemaName="dbo" msprop:design-time-name="75719d43-9712-468d-8f19-fab0d3dc6662">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="VisitsFactID" msprop:FriendlyName="VisitsFactID" msprop:DbColumnName="VisitsFactID" msprop:design-time-name="3c2c3a1e-85cd-4f29-ba37-7b04eb103e37" type="xs:int" />
+                  <xs:element name="CtcID" msprop:FriendlyName="CtcID" msprop:DbColumnName="CtcID" msprop:design-time-name="c35ec12c-7181-4a07-ab7f-dca05d84c5d2" type="xs:int" minOccurs="0" />
+                  <xs:element name="SiteID" msprop:FriendlyName="SiteID" msprop:DbColumnName="SiteID" msprop:design-time-name="1a71d48a-41c7-4793-a489-ce41bd848b36" type="xs:int" minOccurs="0" />
+                  <xs:element name="SourceID" msprop:FriendlyName="SourceID" msprop:DbColumnName="SourceID" msprop:design-time-name="64b3566c-9d7f-451a-aea3-ec09378294d1" type="xs:int" minOccurs="0" />
+                  <xs:element name="DirectSpent" msprop:FriendlyName="DirectSpent" msprop:DbColumnName="DirectSpent" msprop:design-time-name="17e23b0d-54f3-4443-a07a-cd8b30aa0dfa" type="xs:double" minOccurs="0" />
+                  <xs:element name="IndirectSpent" msprop:FriendlyName="IndirectSpent" msprop:DbColumnName="IndirectSpent" msprop:design-time-name="4a076f6e-0f0e-42be-8ecd-b55969817f51" type="xs:double" minOccurs="0" />
+                  <xs:element name="VisitDateTime" msprop:FriendlyName="VisitDateTime" msprop:DbColumnName="VisitDateTime" msprop:design-time-name="311432fa-723d-4077-973c-a221abbf2f10" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="ModifiedDate" msprop:FriendlyName="ModifiedDate" msprop:DbColumnName="ModifiedDate" msprop:design-time-name="9a7f2e50-b246-487e-bf26-507a43b1d48b" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="Gender" msprop:FriendlyName="Gender" msprop:DbColumnName="Gender" msprop:design-time-name="e00f13de-0817-44a6-92e1-9109c4c1a6f1" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="250" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="AgeRange" msprop:FriendlyName="AgeRange" msprop:DbColumnName="AgeRange" msprop:design-time-name="6b6c5388-06f9-4346-a657-65a5cf538c9f" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DIM_Age" />
+          <xs:field xpath="AgeRange" />
+        </xs:unique>
+        <xs:unique name="dbo_DIM_Gender_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DIM_Gender" />
+          <xs:field xpath="Gender" />
+        </xs:unique>
+        <xs:unique name="dbo_DIM_Site_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DIM_Site" />
+          <xs:field xpath="SiteID" />
+        </xs:unique>
+        <xs:unique name="dbo_DIM_Source_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DIM_Source" />
+          <xs:field xpath="Source_x0020_ID" />
+        </xs:unique>
+        <xs:unique name="dbo_FACT_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_FACT" />
+          <xs:field xpath="VisitsFactID" />
+        </xs:unique>
+        <xs:keyref name="FK_Visit_Site" refer="dbo_DIM_Site_Constraint1">
+          <xs:selector xpath=".//dbo_FACT" />
+          <xs:field xpath="SiteID" />
+        </xs:keyref>
+        <xs:keyref name="FK_Visit_Source" refer="dbo_DIM_Source_Constraint1">
+          <xs:selector xpath=".//dbo_FACT" />
+          <xs:field xpath="SourceID" />
+        </xs:keyref>
+        <xs:keyref name="FK_Gender" refer="dbo_DIM_Gender_Constraint1">
+          <xs:selector xpath=".//dbo_FACT" />
+          <xs:field xpath="Gender" />
+        </xs:keyref>
+        <xs:keyref name="FK_AgeRange" refer="Constraint1">
+          <xs:selector xpath=".//dbo_FACT" />
+          <xs:field xpath="AgeRange" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <Visits_x0020_Data_x0020_Warehouse xmlns="" />
+  </Schema>
+</DataSourceView>
